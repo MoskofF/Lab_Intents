@@ -10,11 +10,12 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".ImplicitActivity">
+            <intent-filter>
+                <action android:name="com.loom.lab.IMPLICIT_ACTION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity android:name=".ExplicitActivity">
-            <intent-filter>
-
-            </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

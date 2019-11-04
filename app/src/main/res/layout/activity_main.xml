@@ -8,42 +8,43 @@
         tools:context=".MainActivity">
 
     <Button
-            android:text="Start ExplicitActivity"
+            android:text="Start Explicit Activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button" app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/startExplicit" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="94dp"
-            android:layout_marginStart="161dp" />
+            android:layout_marginStart="101dp" />
     <Button
-            android:text="Button"
+            android:text="Start Implicit Activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button2" app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/startImplicit" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="178dp"
-            android:layout_marginStart="161dp" />
+            android:layout_marginStart="101dp" />
     <Button
-            android:text="Button"
+            android:text="Send via msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button3" app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/send" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="268dp"
-            android:layout_marginStart="161dp"/>
+            android:layout_marginStart="101dp"/>
     <Button
             android:text="Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button4" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="350dp"
-            android:layout_marginStart="161dp" />
+            android:layout_marginStart="101dp" />
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/txtview"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.572"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.472"
             app:layout_constraintVertical_bias="0.661"
             android:layout_marginTop="420dp"
-            android:layout_marginStart="150dp" />
+            android:layout_marginStart="10dp" />
 </android.support.constraint.ConstraintLayout>
