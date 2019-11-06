@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.net.URI;
 import java.util.logging.Logger;
 
 public class MainActivity extends AppCompatActivity {
@@ -117,9 +118,26 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(s);
             }
         } else if (requestCode == slikaPrilika) {
-            if (resultCode == RESULT_OK)
-                startActivity(new Intent(Intent.ACTION_VIEW, data.getData()));
+            if (resultCode == RESULT_OK){
+                //startActivity(new Intent(Intent.ACTION_VIEW, data.getData()));
 
+                Uri slika = data.getData();
+
+                vidiaSlikata(slika);
+            }
+        }
+    }
+
+    private void vidiaSlikata(Uri slika) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory("android.intent.category.DEFAULT");
+        intent.setDataAndType(slika, "image/*");
+
+        Intent chooser = Intent.createChooser(intent, "Choose your app!");
+
+        if (chooser.resolveActivity(getPackageManager()) != null) {
+            startActivity(chooser);
         }
     }
 }
