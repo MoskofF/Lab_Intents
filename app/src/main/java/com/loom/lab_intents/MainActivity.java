@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 public class MainActivity extends AppCompatActivity {
 
     private static final int getResult = 1;
+    private static final int slikaPrilika = 2;
     private static final String textche = "$Weed Papi";
 
     private Logger loomLog;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button startExplicit;
     private Button startImplicit;
     private Button sent;
+    private Button slika;
 
     private TextView result;
 
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         startExplicit = findViewById(R.id.startExplicit);
         startImplicit = findViewById(R.id.startImplicit);
         sent = findViewById(R.id.send);
+        slika = findViewById(R.id.img);
 
         result = findViewById(R.id.txtview);
     }
@@ -59,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sentMsg();
+            }
+        });
+        slika.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                otvoriSlika();
             }
         });
     }
@@ -89,6 +98,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void otvoriSlika() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        String [] types = {"image/jpg", "image/png"};
+        intent.putExtra(Intent.EXTRA_MIME_TYPES, types);
+        startActivityForResult(intent, slikaPrilika);
+
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == getResult) {
@@ -98,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
 
                 result.setText(s);
             }
+        } else if (requestCode == slikaPrilika) {
+            if (resultCode == RESULT_OK)
+                startActivity(new Intent(Intent.ACTION_VIEW, data.getData()));
+
         }
     }
 }
